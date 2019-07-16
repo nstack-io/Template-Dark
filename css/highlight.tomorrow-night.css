@@ -11,7 +11,7 @@
 }
 
 .tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
-  color: #de935f;
+  color: #36EF80;
 }
 
 .tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
