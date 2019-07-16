@@ -11,7 +11,7 @@ section {
 }
 
 h1, h2, h3, h4 {
-    color: #36DDAC;
+    color: #36EF80;
 }
 h3 {
     font-size: 23px;
@@ -33,10 +33,10 @@ header.navbar {
     height: auto;
     line-height: 50px;
     margin-left: 20px;
-    color: #36DDAC;
+    color: #36EF80;
 }
 .navbar a.navbar-brand:hover {
-    color: #36DDAC;
+    color: #36EF80;
 }
 .navbar .navbar-brand small {
     font-size: 18px;
