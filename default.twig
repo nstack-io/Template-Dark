@@ -64,9 +64,9 @@
                                 {% for itemId, item in section.items %}
                                     <li class="{{ itemId == currentMenu ? 'active' }}">
 										<!-- {% if itemId != "features-theEnd" %} -->
-	                                        <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
-	                                            {{ item.text|raw }}
-	                                        </a>
+                                            <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}" onclick="interceptSidebarClick(event);">
+                                                {{ item.text|raw }}
+                                            </a>
 										<!-- {% else %} -->
 											<!-- <br> <br> -->
 										<!-- {% endif %} -->
@@ -93,10 +93,26 @@
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
                 hljs.initHighlightingOnLoad();
-            });
-        </script>
 
+                // Preserve menu scroll position
+                const urlParams = new URLSearchParams(window.location.search);
+                const sidebarScroll = urlParams.get('sidebarScroll');
+
+                $("#sidebar").scrollTop(sidebarScroll);
+            });
+
+            function interceptSidebarClick(event) {
+                event.preventDefault();
+
+                let url = new URL(event.target.href);
+                url.searchParams.append("sidebarScroll", $("#sidebar").scrollTop());
+
+                location.href = url.toString();
+            }
+
+        </script>
     </body>
 </html>
