@@ -65,8 +65,8 @@
                                     <li class="{{ itemId == currentMenu ? 'active' }}">
 										<!-- {% if itemId != "features-theEnd" %} -->
                                             <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}" onclick="interceptSidebarClick(event);">
-	                                            {{ item.text|raw }}
-	                                        </a>
+                                                {{ item.text|raw }}
+                                            </a>
 										<!-- {% else %} -->
 											<!-- <br> <br> -->
 										<!-- {% endif %} -->
@@ -114,6 +114,5 @@
             }
 
         </script>
-
     </body>
 </html>
