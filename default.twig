@@ -93,8 +93,15 @@
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
                 hljs.initHighlightingOnLoad();
+
+                // Preserve menu scroll position
+                const urlParams = new URLSearchParams(window.location.search);
+                const sidebarScroll = urlParams.get('sidebarScroll');
+
+                $("#sidebar").scrollTop(sidebarScroll)
             });
         </script>
 
